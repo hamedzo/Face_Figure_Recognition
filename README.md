@@ -1,59 +1,62 @@
-# Face Figure Recognition with MediaPipe
+# Face Pose & Body Language Detection
 
-A lightweight, efficient, and extensible project for real-time face figure recognition using [MediaPipe](https://mediapipe.dev/)—a cutting-edge, cross-platform framework for building multimodal machine learning pipelines.
+This repository provides tools to gather facial and pose landmarks using MediaPipe and OpenCV, train a machine learning model on the gathered data, and use the trained model for real-time body language classification.
 
 ---
 
 ## 📸 Project Overview
 
-This project leverages **MediaPipe Face Mesh** and supporting modules to detect and analyze human facial features in real time. It is suitable for a range of applications, including:
+This project leverages **MediaPipe Holistic** (including Face Mesh, Pose, and Hands) to collect, analyze, and classify human pose and facial features in real time. Applications include:
 
-- Facial landmark detection
-- Facial structure and symmetry analysis
+- Facial landmark & pose detection
 - Gesture and emotion recognition
-- Head pose estimation
+- Head pose and body language estimation
 - Baseline biometric/identity recognition
 
 ---
 
 ## 🎯 Objectives
 
-- Detect human faces from live video (webcam or video files)
-- Identify and annotate 468 facial landmarks per face
-- Analyze facial metrics (eye distance, face symmetry, head orientation, etc.)
-- Offer a scalable foundation for advanced face-related AI models
+- Detect human faces and poses from live video (webcam)
+- Identify and annotate 468 facial landmarks per face and body pose
+- Analyze facial and body metrics for emotion/gesture recognition
+- Provide a workflow for gathering data, training, and real-time prediction
 
 ---
 
 ## ✨ Features
 
-- 🧠 **Facial Landmark Detection:** 468-point mesh per face using MediaPipe
+- 🧠 **Landmark Detection:** 468-point facial mesh, full body pose, and hand tracking using MediaPipe Holistic
 - ⏱ **Real-Time Processing:** Smooth video stream handling via OpenCV
-- 🔍 **Geometry-Based Analysis:** Extract face metrics for symmetry, proportions, etc.
-- 🖼 **Rich Visualizations:** Overlay landmark points and facial measurements on frames
-- 💡 **Extensible Design:** Easily add emotion recognition, face classification, and more
+- 🧑‍🔬 **Data Collection:** Record landmarks with class labels for custom training
+- 🤖 **Machine Learning:** Train, evaluate, and export classifiers (Random Forest, Logistic Regression, etc.) for pose/body language
+- 🏷 **Live Prediction:** Run real-time predictions with overlayed results
+- 💡 **Extensible Design:** Easily add new classes or features (emotion types, gestures, etc.)
 
 ---
 
 ## 🛠 Tech Stack
 
 - [Python 3.7+](https://www.python.org/)
-- [MediaPipe](https://google.github.io/mediapipe/)
+- [MediaPipe](https://mediapipe.dev/)
 - [OpenCV](https://opencv.org/)
 - [NumPy](https://numpy.org/)
+- [pandas](https://pandas.pydata.org/)
+- [scikit-learn](https://scikit-learn.org/)
 
 ---
 
 ## 📂 Project Structure
 
 ```bash
-face-figure-recognition-mediapipe/
+Face_Pose_Detection/
 │
-├── main.py            # Main script to run face recognition
-├── utils.py           # Helper functions (drawing, preprocessing, etc.)
-├── requirements.txt   # Required Python libraries
-├── README.md          # Project documentation
-└── examples/          # Example images or videos for testing
+├── Data gathering.py       # Collect pose/face landmarks and save to CSV
+├── learn model.py          # Train model on gathered data and export as pickle
+├── load model.py           # Real-time prediction using webcam and trained model
+├── body_language.pkl       # Example pre-trained model
+├── README.md               # Project documentation
+└── coords.csv              # Data file (generated during data collection)
 ```
 
 ---
@@ -63,45 +66,68 @@ face-figure-recognition-mediapipe/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/hamedzo/Face_Recognition.git
-cd Face_Recognition
+git clone https://github.com/hamedzo/Face_Pose_Detection.git
+cd Face_Pose_Detection
 ```
 
 ### 2. (Optional) Create a Virtual Environment
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 ### 3. Install Dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install mediapipe opencv-python numpy pandas scikit-learn
 ```
 
-### 4. Run the Application
+### 4. Data Gathering
+
+Run the following script to collect pose and face landmarks from your webcam and save them to `coords.csv`:
 
 ```bash
-python main.py
+python "Data gathering.py"
 ```
+
+- Press `q` to quit.
+- The script writes pose and face landmarks, along with a class label (default: `Happy`), to `coords.csv`.
+- Change the `class_name` variable in the script to collect data for different classes.
+
+### 5. Model Training
+
+After gathering data, train a model:
+
+```bash
+python "learn model.py"
+```
+
+- Reads `coords.csv`, splits data, trains multiple classifiers, reports accuracy, and saves the Random Forest model as `body_language.pkl`.
+
+### 6. Real-Time Prediction
+
+Use your webcam for real-time classification:
+
+```bash
+python "load model.py"
+```
+
+- Loads the trained model, starts webcam, and overlays prediction results (class and confidence) on the video feed.
 
 ---
 
 ## 🧠 How It Works
 
-The pipeline is as follows:
-
-1. **Face Detection:** Locates and tracks faces in the input stream.
-2. **Landmark Extraction:** Maps 468 facial landmarks per detected face.
-3. **Rendering:** Overlays the mesh and keypoints on frames using OpenCV.
-4. **Multi-Face Support:** Tracks and analyzes multiple faces in real time.
+1. **Data Collection:** Gather pose and face landmarks labeled with class names (e.g., happy, sad, surprised).
+2. **Model Training:** Train classifiers to recognize the classes from landmark data, save the best model.
+3. **Live Prediction:** Use the webcam and model to recognize and display predicted body language/emotion in real time.
 
 ---
 
 ## 📸 Sample Output
 
-_Add sample images or GIFs here to showcase the output (e.g. annotated video frames)._
+_Add sample images or GIFs here to showcase annotated video frames with predicted class and probability._
 
 ---
 
@@ -111,25 +137,28 @@ _Add sample images or GIFs here to showcase the output (e.g. annotated video fra
 - OpenCV
 - MediaPipe
 - NumPy
+- pandas
+- scikit-learn
 
 ---
 
 ## 🧪 Example Use Cases
 
-- 🎭 Real-time face filters and AR effects
-- 📊 Automated facial expression analysis
+- 🎭 Real-time emotion/body language recognition
+- 📊 Automated gesture analysis
 - 🔐 Biometric authentication or mood detection
-- 🧍 Avatar animation from facial gestures
-- 📏 Scientific or biometric face measurements
+- 🧍 Avatar animation from facial/body gestures
+- 📏 Scientific or biometric face/pose measurements
 
 ---
 
 ## 📌 Roadmap / To-Do
 
-- [ ] Add facial expression classification (happy, sad, etc.)
-- [ ] Integrate 3D face visualization
+- [ ] Add more expression/body language categories
+- [ ] Integrate 3D face/pose visualization
 - [ ] Add GUI support (Tkinter, PyQt)
 - [ ] Export landmark data as JSON
+- [ ] Improve data balancing and augmentation
 
 ---
 
@@ -164,6 +193,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - [Google MediaPipe](https://mediapipe.dev/) for real-time ML pipelines
 - [OpenCV](https://opencv.org/) for computer vision capabilities
+- [scikit-learn](https://scikit-learn.org/) for machine learning tools
 - The open-source community for invaluable contributions
 
 ---
