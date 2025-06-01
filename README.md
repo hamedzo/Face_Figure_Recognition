@@ -47,21 +47,25 @@ face-figure-recognition-mediapipe/
 ## 🛠️ Getting Started
 
 ### 1. Clone the repository
+```bash
 git clone https://github.com/yourusername/face-figure-recognition-mediapipe.git
 cd face-figure-recognition-mediapipe
-
+```
 ### 2. Create a Virtual Environment (Optional but Recommended)
+```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-
+```
 ### 3. Install Dependencies
+```bash
 pip install -r requirements.txt
-
+```
 ## 🚀 Usage
 
 ## Run the application
+```bash
 python main.py
-
+```
 ## 🧠 How It Works
 This project uses the MediaPipe Face Mesh pipeline:
 
