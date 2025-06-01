@@ -35,7 +35,7 @@ This project utilizes **MediaPipe Face Mesh** and related modules to detect and 
 - [NumPy](https://numpy.org/)
 
 ## 📂 Project Structure
-``bash
+```bash
 face-figure-recognition-mediapipe/
 │
 ├── main.py                    # Main script to run face recognition
