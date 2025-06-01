@@ -86,10 +86,11 @@ This project uses the MediaPipe Face Mesh pipeline:
 - NumPy
 
 ## 🧪 Example Use Cases
-- Face filters and AR effects
-- Real-time facial expression analysis
-- Face-based authentication or emotion tracking
-- Avatar animation based on facial landmarks
+- 🎭 Face filters and AR effects
+- 📊 Facial expression analysis in real time
+- 🔐 Face-based authentication or mood detection
+- 🧍 Avatar animation based on user’s facial gestures
+- 📏 Scientific or biometric face measurements
 
 ## 📌 TO DO / Roadmap
  - Add expression classification (happy, sad, etc.)
