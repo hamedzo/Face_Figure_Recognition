@@ -1,31 +1,39 @@
 # Face Figure Recognition with MediaPipe
 
-A lightweight and efficient project for real-time face figure recognition using [MediaPipe](https://mediapipe.dev/), a cross-platform framework for building multimodal applied machine learning pipelines.
+A lightweight, efficient, and extensible project for real-time face figure recognition using [MediaPipe](https://mediapipe.dev/)—a cutting-edge, cross-platform framework for building multimodal machine learning pipelines.
+
+---
 
 ## 📸 Project Overview
 
-This project utilizes **MediaPipe Face Mesh** and related modules to detect and recognize human facial features in real-time. It can be used in applications such as:
+This project leverages **MediaPipe Face Mesh** and supporting modules to detect and analyze human facial features in real time. It is suitable for a range of applications, including:
 
 - Facial landmark detection
-- Facial structure analysis
+- Facial structure and symmetry analysis
 - Gesture and emotion recognition
 - Head pose estimation
-- Biometric and identity recognition (as a baseline)
+- Baseline biometric/identity recognition
+
+---
 
 ## 🎯 Objectives
 
-- Detect human faces from video input (webcam or video file)
-- Identify and annotate facial landmarks
-- Analyze facial figure metrics (e.g. eye distance, face symmetry, head orientation)
-- Create a scalable base for future face-related AI models
+- Detect human faces from live video (webcam or video files)
+- Identify and annotate 468 facial landmarks per face
+- Analyze facial metrics (eye distance, face symmetry, head orientation, etc.)
+- Offer a scalable foundation for advanced face-related AI models
+
+---
 
 ## ✨ Features
 
-- 🧠 Facial landmark detection (468 points)
-- ⏱ Real-time video processing with OpenCV
-- 🔍 Face figure analysis (geometry-based)
-- 🖼 Visualizations of landmark points and measurements
-- 💡 Easy to extend for emotion recognition, face classification, etc.
+- 🧠 **Facial Landmark Detection:** 468-point mesh per face using MediaPipe
+- ⏱ **Real-Time Processing:** Smooth video stream handling via OpenCV
+- 🔍 **Geometry-Based Analysis:** Extract face metrics for symmetry, proportions, etc.
+- 🖼 **Rich Visualizations:** Overlay landmark points and facial measurements on frames
+- 💡 **Extensible Design:** Easily add emotion recognition, face classification, and more
+
+---
 
 ## 🛠 Tech Stack
 
@@ -34,90 +42,128 @@ This project utilizes **MediaPipe Face Mesh** and related modules to detect and 
 - [OpenCV](https://opencv.org/)
 - [NumPy](https://numpy.org/)
 
+---
+
 ## 📂 Project Structure
+
 ```bash
 face-figure-recognition-mediapipe/
 │
-├── main.py                    # Main script to run face recognition
-├── utils.py                   # Helper functions (drawing, preprocessing, etc.)
-├── requirements.txt           # Required Python libraries
-├── README.md                  # Project documentation
-└── examples/                  # Example images or videos for testing
+├── main.py            # Main script to run face recognition
+├── utils.py           # Helper functions (drawing, preprocessing, etc.)
+├── requirements.txt   # Required Python libraries
+├── README.md          # Project documentation
+└── examples/          # Example images or videos for testing
 ```
-## 🛠️ Getting Started
 
-### 1. Clone the repository
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
 ```bash
-git clone https://github.com/yourusername/face-figure-recognition-mediapipe.git
-cd face-figure-recognition-mediapipe
+git clone https://github.com/hamedzo/Face_Recognition.git
+cd Face_Recognition
 ```
-### 2. Create a Virtual Environment (Optional but Recommended)
+
+### 2. (Optional) Create a Virtual Environment
+
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  # Windows: venv\Scripts\activate
 ```
+
 ### 3. Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
-## 🚀 Usage
 
-## Run the application
+### 4. Run the Application
+
 ```bash
 python main.py
 ```
+
+---
+
 ## 🧠 How It Works
-This project uses the MediaPipe Face Mesh pipeline:
 
- 1. Face Detection – Detects and tracks faces in the image.
+The pipeline is as follows:
 
- 2. Landmark Extraction – Maps 468 facial landmarks per face in real time.
+1. **Face Detection:** Locates and tracks faces in the input stream.
+2. **Landmark Extraction:** Maps 468 facial landmarks per detected face.
+3. **Rendering:** Overlays the mesh and keypoints on frames using OpenCV.
+4. **Multi-Face Support:** Tracks and analyzes multiple faces in real time.
 
- 3. Rendering – Draws facial mesh and key points using OpenCV.
-
- 4. The model runs in real time and is capable of tracking multiple faces simultaneously.
+---
 
 ## 📸 Sample Output
 
+_Add sample images or GIFs here to showcase the output (e.g. annotated video frames)._
+
+---
+
 ## ✅ Requirements
+
 - Python 3.7+
 - OpenCV
 - MediaPipe
 - NumPy
 
+---
+
 ## 🧪 Example Use Cases
-- 🎭 Face filters and AR effects
-- 📊 Facial expression analysis in real time
-- 🔐 Face-based authentication or mood detection
-- 🧍 Avatar animation based on user’s facial gestures
+
+- 🎭 Real-time face filters and AR effects
+- 📊 Automated facial expression analysis
+- 🔐 Biometric authentication or mood detection
+- 🧍 Avatar animation from facial gestures
 - 📏 Scientific or biometric face measurements
 
-## 📌 TO DO / Roadmap
- - Add expression classification (happy, sad, etc.)
- - Integrate 3D face visualization
- - Add GUI support with Tkinter or PyQt
- - Export landmark data as JSON
+---
+
+## 📌 Roadmap / To-Do
+
+- [ ] Add facial expression classification (happy, sad, etc.)
+- [ ] Integrate 3D face visualization
+- [ ] Add GUI support (Tkinter, PyQt)
+- [ ] Export landmark data as JSON
+
+---
 
 ## 🤝 Contributing
-Contributions are welcome! Please fork this repo and submit a pull request for review.
-- Fork the repository
-- Create a new branch: git checkout -b feature-name
-- Make your changes
-- Commit your changes: git commit -m 'Add feature'
-- Push to the branch: git push origin feature-name
-- Open a Pull Request
+
+Contributions are warmly welcomed! To contribute:
+
+1. **Fork** the repository
+2. **Create a branch:** `git checkout -b feature-name`
+3. **Make your changes**
+4. **Commit:** `git commit -m 'Add feature'`
+5. **Push:** `git push origin feature-name`
+6. **Open a Pull Request**
+
+---
 
 ## 🧾 License
-This project is licensed under the MIT License. See the LICENSE file for details.
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
 
 ## 📬 Contact
-- Author: Hamed Zohrab
-- GitHub: @hamedzo
-- Email: hamed.zohrab@gmail.com
+
+- **Author:** Hamed Zohrab
+- **GitHub:** [@hamedzo](https://github.com/hamedzo)
+- **Email:** hamed.zohrab@gmail.com
+
+---
 
 ## 🙏 Acknowledgements
-- Google MediaPipe for their amazing real-time ML pipelines
-- OpenCV for computer vision functionality
-- Community and open-source contributors
 
+- [Google MediaPipe](https://mediapipe.dev/) for real-time ML pipelines
+- [OpenCV](https://opencv.org/) for computer vision capabilities
+- The open-source community for invaluable contributions
 
+---
