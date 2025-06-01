@@ -35,13 +35,14 @@ This project utilizes **MediaPipe Face Mesh** and related modules to detect and 
 - [NumPy](https://numpy.org/)
 
 ## 📂 Project Structure
-ace-figure-recognition/
+``bash
+face-figure-recognition-mediapipe/
 │
-├── main.py # Main script to run the application
-├── face_utils.py # Helper functions for face figure analysis
-├── requirements.txt # List of dependencies
-├── README.md # Project documentation
-└── assets/ # Images, samples, or visual output
+├── main.py                    # Main script to run face recognition
+├── utils.py                   # Helper functions (drawing, preprocessing, etc.)
+├── requirements.txt           # Required Python libraries
+├── README.md                  # Project documentation
+└── examples/                  # Example images or videos for testing
 
 ## 🛠️ Getting Started
 
