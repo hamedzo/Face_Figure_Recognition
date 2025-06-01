@@ -43,7 +43,7 @@ face-figure-recognition-mediapipe/
 ├── requirements.txt           # Required Python libraries
 ├── README.md                  # Project documentation
 └── examples/                  # Example images or videos for testing
-
+```
 ## 🛠️ Getting Started
 
 ### 1. Clone the repository
