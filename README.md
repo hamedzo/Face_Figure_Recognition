@@ -110,13 +110,13 @@ Contributions are welcome! Please fork this repo and submit a pull request for r
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## 📬 Contact
-Author: Hamed Zohrab
-GitHub: @hamedzo
-Email: hamed.zohrab@gmail.com
+- Author: Hamed Zohrab
+- GitHub: @hamedzo
+- Email: hamed.zohrab@gmail.com
 
 ## 🙏 Acknowledgements
-Google MediaPipe for their amazing real-time ML pipelines
-OpenCV for computer vision functionality
-Community and open-source contributors
+- Google MediaPipe for their amazing real-time ML pipelines
+- OpenCV for computer vision functionality
+- Community and open-source contributors
 
 
