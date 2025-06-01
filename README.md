@@ -35,4 +35,83 @@ This project utilizes **MediaPipe Face Mesh** and related modules to detect and 
 - [NumPy](https://numpy.org/)
 
 ## 📂 Project Structure
+ace-figure-recognition/
+│
+├── main.py # Main script to run the application
+├── face_utils.py # Helper functions for face figure analysis
+├── requirements.txt # List of dependencies
+├── README.md # Project documentation
+└── assets/ # Images, samples, or visual output
+
+## 🛠️ Getting Started
+
+### 1. Clone the repository
+git clone https://github.com/yourusername/face-figure-recognition-mediapipe.git
+cd face-figure-recognition-mediapipe
+
+### 2. Create a Virtual Environment (Optional but Recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+### 3. Install Dependencies
+pip install -r requirements.txt
+
+## 🚀 Usage
+
+## Run the application
+python main.py
+
+## 🧠 How It Works
+This project uses the MediaPipe Face Mesh pipeline:
+
+ 1. Face Detection – Detects and tracks faces in the image.
+
+ 2. Landmark Extraction – Maps 468 facial landmarks per face in real time.
+
+ 3. Rendering – Draws facial mesh and key points using OpenCV.
+
+ 4. The model runs in real time and is capable of tracking multiple faces simultaneously.
+
+## 📸 Sample Output
+
+## ✅ Requirements
+- Python 3.7+
+- OpenCV
+- MediaPipe
+- NumPy
+
+## 🧪 Example Use Cases
+- Face filters and AR effects
+- Real-time facial expression analysis
+- Face-based authentication or emotion tracking
+- Avatar animation based on facial landmarks
+
+## 📌 TO DO / Roadmap
+ - Add expression classification (happy, sad, etc.)
+ - Integrate 3D face visualization
+ - Add GUI support with Tkinter or PyQt
+ - Export landmark data as JSON
+
+## 🤝 Contributing
+Contributions are welcome! Please fork this repo and submit a pull request for review.
+- Fork the repository
+- Create a new branch: git checkout -b feature-name
+- Make your changes
+- Commit your changes: git commit -m 'Add feature'
+- Push to the branch: git push origin feature-name
+- Open a Pull Request
+
+## 🧾 License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## 📬 Contact
+Author: Hamed Zohrab
+GitHub: @hamedzo
+Email: hamed.zohrab@gmail.com
+
+## 🙏 Acknowledgements
+Google MediaPipe for their amazing real-time ML pipelines
+OpenCV for computer vision functionality
+Community and open-source contributors
+
 
